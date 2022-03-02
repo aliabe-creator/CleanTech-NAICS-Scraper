@@ -34,7 +34,7 @@ driver.maximize_window()
 row = 0
 
 #iterate over addresses in rows
-for ind in range(0, max(df1.index)):
+for ind in range(0, max(df1.index) + 1):
     
     driver.get('https://mailinglists.com/mailinglistsxpress/duns-number-sic-and-naics-code-lookup/') #visit website
     
@@ -69,7 +69,7 @@ for ind in range(0, max(df1.index)):
     else: #meaning no matching company found
         outputarr.append('')
     
-    print(f'{round(row / max(df1.index) * 100, 2)} % done.')
+    print(f'{round(row / (max(df1.index) + 1) * 100, 2)} % done.')
     
     row = row + 1 #put outside so even if blank, then will properly list
 
