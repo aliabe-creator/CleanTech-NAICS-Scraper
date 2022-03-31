@@ -33,4 +33,5 @@
     * This time, a file named `googlev3.xlsx` will be created. Copy the non-blank rows into the corresponding locations in the company Excel sheet.
     * If there are still empty lat/longs, they will have to be found manually.
     * Save the Excel file.
-5.	Tableau!
+* Tableau!
+https://user-images.githubusercontent.com/80125711/160988081-92013f99-3d5e-4962-bc2a-c885d9d39bcc.mp4
