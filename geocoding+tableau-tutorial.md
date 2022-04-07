@@ -36,3 +36,20 @@
     * Save the Excel file.
     * Copy and paste the coordinates back to Google Sheets.
 * Tableau!
+    * Download the Google Sheets as an Excel file. DO NOT download as csv, Tableau has issues with refreshing csv data sources.
+    * Open Tableau and add a new Excel data source. Navigate to the Excel file.
+    * If you do not see a screen like this: ![image](https://user-images.githubusercontent.com/80125711/162134035-f6f75f34-5d07-4bbc-b190-e89bcabac36f.png)
+drag the appropriate sheet under "Sheets" on the left toolbar to the central gray space and release.
+    * Switch to Sheet 1. Ensure that Latitude and Longitude fields are of type "Dimension." Check by clicking on this little dropdown arrow: ![image](https://user-images.githubusercontent.com/80125711/162134375-6cbe383f-5f83-47f4-837c-a13abe0e3e1e.png)
+and ensuring "Dimension" is checked.
+    * Drag and drop Latitude to the "Columns" area, and Longitude to the "Rows" area: ![image](https://user-images.githubusercontent.com/80125711/162134706-cb6e0473-6087-4736-ba03-2a706ef8b9c3.png). Click on the dropdowns next to Latitude and Longitude and select Dimension for both.
+    * Click on the "Show Me" button at the top right corner and click the Symbol Map tile. ![image](https://user-images.githubusercontent.com/80125711/162135132-02df76c9-e1d8-4139-bfdf-735382047a08.png)
+    * To filter data, drag a field like "City" to the Filters area. If it is properly set as a Dimension, a window like this should show up: ![image](https://user-images.githubusercontent.com/80125711/162135374-fd7e070b-012b-4e3f-a38f-c3ee6f6b4188.png). Ensure that "Select from list" is checked, click "All" if not all fields are selected, and press "OK" to exit. Repeat for other filters you may want to add.
+    * In the Filters area, click on each field's dropdown menu and click "Show Filter." They should pop up on the right hand side.
+    * Click the dropdown icon next to the filters on the right hand side and select "Only Relevant Values." ![image](https://user-images.githubusercontent.com/80125711/162135753-930bbc81-83ee-4cb5-a8b4-953386baee91.png)
+    * Save the viz to Tableau Public by going to File > Save to Tableau Public. Choose a name to save it as (login if necessary), and the viz should automatically open in your default browser.
+    * __To update data__
+        * Close the Tableau Public app on your computer.
+        * Make necessary changes to the locally saved Excel file.
+        * Reopen Tableau Public. The edits should automatically be ingested into Tableau.
+        * Re-publish the viz to Tableau Public by going to File > Save to Tableau Public.
