@@ -12,19 +12,20 @@
     * Download Tableau Public (https://public.tableau.com/en-us/s/). You will have to sign up for an account if you don't already have one.
     * Install and start Tableau.
 * Set up company lists with full addresses.
-    * Download the Google Sheet workbook with the companies listed to the *__same directory as the scripts (.py files)__*.![image](https://user-images.githubusercontent.com/80125711/160977059-93dcc577-0029-48bf-bf39-5f75cc6d7cc0.png)
-    * Remove all entities that don't have a full, valid address (or make up a valid address).
+    * In Google Sheets, remove all entities that don't have a full, valid address (or make up a valid address).
     * Find an empty column, and in the first cell of that empty column type `Full Address`.
     * In the cell right below it, type a formula to form a full address from the adjacent cells in the spreadsheet. For example, if "1234 Random Road" is in cell `A1`, "Random City" is in cell `B1`, and "12456" is in cell `D1`, to form the full address "1234 Random Road, Random City, OR 12456" (assuming this is the Oregon list), you would type into the cell `=A1&", "&B1&", OR "&D1`, where the `&` operator is the glue that joins together the strings.
         * Press enter to evaluate the formula, and copy that same formula down to all the other cells that have a full, valid address.
-     * Save the spreadsheet.
+     * Download the spreadsheet to the same directory as the Python scripts.
 * Nominatim geocoding.
     * In the Command Prompt/Terminal window, navigate to the directory where the scripts and the company list are. Use the `cd` command (for example, if I wanted to go to a folder named `Stuff` within the current directory I am in, I would type `cd Stuff` and press enter to go within the `Stuff` folder.
     * Type `python geocoding_nominatim.py` and press enter to execute the Nominatim geocoding script. Enter in the appropriate values when prompted.
         * __DO NOTE__ At least on Windows, if you want to use a directory path like C:\Users\user\Downloads\list.xlsx, you should input it as C:\\Users\\user\\Downloads\\list.xlsx. If you run into an error, try this first.
     * After the script completes, you should find a file titled `nominatim.xlsx` in the same folder. Open it, and copy everything from the row marked 1 down the the last marked row to the company Excel sheet in two empty columns. Title the columns `Latitude` and `Longitude`.
     * Save the Excel file.
-* Google geocoding.
+    * Copy and paste the coordinates back to Google Sheets.
+* Google geocoding (Handled by me due to increased complexity)
+    * Re-download the Google Sheet with the Nominatim coordinates.
     * Likely, not all companies listed will have a latitude/longitude, since Nominatim is usually less powerful compared to other solutions, which require an API key. Google, as you might suspect, provides one of the best (if not the best) geocoding services. However, the process to obtain an API key is quite convoluted.
     * The official Google docs is at https://developers.google.com/maps/documentation/geocoding. The relevant section is Setup, but it's good to get context from the other sections. Do note, it is not necessary to restrict the use of the API key, since I assume you won't post it publicly ;) 
     * Copy the API key for use later.
@@ -33,5 +34,5 @@
     * This time, a file named `googlev3.xlsx` will be created. Copy the non-blank rows into the corresponding locations in the company Excel sheet.
     * If there are still empty lat/longs, they will have to be found manually.
     * Save the Excel file.
+    * Copy and paste the coordinates back to Google Sheets.
 * Tableau!
-https://user-images.githubusercontent.com/80125711/160988081-92013f99-3d5e-4962-bc2a-c885d9d39bcc.mp4
