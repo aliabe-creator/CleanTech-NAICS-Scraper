@@ -37,6 +37,7 @@
     * Copy and paste the coordinates back to Google Sheets.
 * Tableau!
     * Download the Google Sheets as an Excel file. DO NOT download as csv, Tableau has issues with refreshing csv data sources.
+    * Remove all columns we do not want to be public.
     * Open Tableau and add a new Excel data source. Navigate to the Excel file.
     * If you do not see a screen like this: ![image](https://user-images.githubusercontent.com/80125711/162134035-f6f75f34-5d07-4bbc-b190-e89bcabac36f.png)
 drag the appropriate sheet under "Sheets" on the left toolbar to the central gray space and release.
@@ -50,6 +51,6 @@ and ensuring "Dimension" is checked.
     * Save the viz to Tableau Public by going to File > Save to Tableau Public. Choose a name to save it as (login if necessary), and the viz should automatically open in your default browser.
     * __To update data__
         * Close the Tableau Public app on your computer.
-        * Make necessary changes to the locally saved Excel file.
+        * Make necessary changes to the locally saved Excel file, update Google Sheets accordingly.
         * Reopen Tableau Public. The edits should automatically be ingested into Tableau.
         * Re-publish the viz to Tableau Public by going to File > Save to Tableau Public.
