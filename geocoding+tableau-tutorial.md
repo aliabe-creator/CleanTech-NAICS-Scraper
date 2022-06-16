@@ -49,8 +49,9 @@ and ensuring "Dimension" is checked.
     * In the Filters area, click on each field's dropdown menu and click "Show Filter." They should pop up on the right hand side.
     * Click the dropdown icon next to the filters on the right hand side and select "Only Relevant Values." ![image](https://user-images.githubusercontent.com/80125711/162135753-930bbc81-83ee-4cb5-a8b4-953386baee91.png)
     * Save the viz to Tableau Public by going to File > Save to Tableau Public. Choose a name to save it as (login if necessary), and the viz should automatically open in your default browser.
-    * __To update data__
+    * __To update data, as responses come in from Google form__
         * Close the Tableau Public app on your computer.
-        * Make necessary changes to the locally saved Excel file, update Google Sheets accordingly.
-        * Reopen Tableau Public. The edits should automatically be ingested into Tableau.
+        * Open Google form link and go to the "Responses" tab on the top.
+        * Open locally saved Excel file (linked to Tableau), and add new rows/modify information on the Excel sheet as necessary. Make the same changes to the "FINAL Company Lists" Google Sheet.
+        * Reopen Tableau Public and open the Oregon_CT or Washington_CT project, whichever was edited. The edits should automatically be ingested into Tableau. If they are not automatically ingested, go to the "Data Source" tab in the bottom left hand corner and resolve issues there (re-link Excel workbook if necessary).
         * Re-publish the viz to Tableau Public by going to File > Save to Tableau Public.
