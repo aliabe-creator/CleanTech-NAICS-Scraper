@@ -20,6 +20,12 @@ from geopy.geocoders import GoogleV3
 print('Please ensure a full address is present under a column titled "Full Address", and lat/long from Nominatim in columns titled "Latitude" and "Longitude".')
 input_workbook = input('What is the name of the workbook you want to process (with file extension)? ')
 state = input('Enter Oregon/Washington: ')
+
+if state == 'Oregon':
+    state_alt = 'OR'
+else:
+    state_alt = 'WA'
+
 input_sheet = input('What is the name of the sheet your data resides on? ')
 api_key = input('Enter your API key: ')
 
@@ -39,10 +45,13 @@ for ind in range(0, max(df1.index) + 1):
     print(address)
     
     if address != None and df1['Latitude'][ind] == None: # we only want to process lines that have an address and that do not yet have a lat/long
-        location = geolocator.geocode(query = address, sensor = False)
-        print(location)
+        try:
+            location = geolocator.geocode(query = address, sensor = False)
+            print(location)
+        except Exception as e:
+            print(e)
         
-        if location != None and state in str(location):
+        if location != None and (state in str(location) or state_alt in str(location)):
             intermed_array = [location.latitude, location.longitude]
             outputarr.append(intermed_array)
         else:
